@@ -12,3 +12,4 @@ D:\Practice\.NET\C_Sharp\obj\Debug\net10.0\refint\C_Sharp.dll
 D:\Practice\.NET\C_Sharp\obj\Debug\net10.0\C_Sharp.pdb
 D:\Practice\.NET\C_Sharp\obj\Debug\net10.0\C_Sharp.genruntimeconfig.cache
 D:\Practice\.NET\C_Sharp\obj\Debug\net10.0\ref\C_Sharp.dll
+D:\Practice\.NET\C_Sharp\obj\Debug\net10.0\C_Sharp.sourcelink.json

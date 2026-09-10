@@ -7,6 +7,7 @@ namespace FirstApi.Controllers
     [Route("api/[controller]")]
     public class ProductsController : ControllerBase
     {
+        //Get request
         [HttpGet]
         public IActionResult GetProducts()
         {
@@ -20,12 +21,25 @@ namespace FirstApi.Controllers
             return Ok(products);
         }
 
+        //Get by Id 1 
+        [HttpGet("{id}")]
+        public IActionResult GetProductById(int id)
+        {
+            Product product = new Product {Id = id, Name = "laptop", Price = 100000.5};
+            return Ok(product);
+        }
+
+
+
+        
+        //Post request
         [HttpPost]
         public IActionResult AddProduct(Product product)
         {
             return Ok(product);
         }
 
+        //Put request
         [HttpPut("{id}")]
         public IActionResult UpdateProduct(int id, Product product)
         {
@@ -35,6 +49,7 @@ namespace FirstApi.Controllers
 
         }
 
+        //Delete request
         [HttpDelete("{id}")]
         public IActionResult DeleteProduct(int id)
         {

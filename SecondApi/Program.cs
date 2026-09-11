@@ -1,4 +1,5 @@
 using SecondApi.Services;
+using SecondApi.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -6,7 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 //Register Services 
-builder.Services.AddScoped<ProductService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
+// Register Repositories
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 

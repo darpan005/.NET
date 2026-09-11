@@ -7,9 +7,9 @@ namespace SecondApi.Controllers
     [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
-        private readonly ProductService _service;
+        private readonly IProductService _service;
 
-        public ProductController(ProductService service)
+        public ProductController(IProductService service)
         {
             _service = service;
         }

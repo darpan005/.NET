@@ -14,7 +14,11 @@ namespace SecondApi.Services
 
         public List<Product> GetProducts()
         {
-            return _repository.GetProducts();
+            var products = _repository.GetProducts();
+
+            return products
+                    .Where(p => p.Price >= 10)
+                    .ToList();
         }
 
     }

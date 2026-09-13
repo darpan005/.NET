@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Day6.Service;
+using Day6.DTOs;
 
 namespace Day6.Controllers;
 
@@ -16,9 +17,17 @@ public class ProductController : ControllerBase
 
     //Get Products
     [HttpGet]
-    public IActionResult GetProducts()
+    public async Task<IActionResult> GetProducts()
     {
-        var products = _service.GetProducts();
+        var products = await _service.GetProducts();
+
         return Ok(products);
+    }
+
+    [HttpPost]
+    public async Task<IActionResult> CreateProduct([FromBody] ProductDTO productDto)
+    {
+        var createdProduct = await _service.CreateProduct(productDto);
+        return CreatedAtAction(nameof(GetProducts), createdProduct);
     }
 }

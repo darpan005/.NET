@@ -4,5 +4,6 @@ namespace Day6.Service;
 
 public interface IProductService
 {
-    List<ProductDTO> GetProducts();
+    Task<List<ProductDTO>> GetProducts();
+    Task<ProductDTO> CreateProduct(ProductDTO productdto);
 }

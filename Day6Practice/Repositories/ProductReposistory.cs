@@ -1,17 +1,27 @@
 using Day6.Models;
+using Day6Practice.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace Day6.Repositories;
 
 public class ProductRepository : IProductRepository
 {
-    public List<Product> GetProducts()
+    private readonly AppDbContext _context;
+
+    public ProductRepository(AppDbContext context)
     {
-        return new List<Product>
-        {
-            new Product {Id=1, Name="Laptop", Price=50000},
-            new Product {Id=2, Name="Mouse", Price=500},
-            new Product {Id=3, Name="KeyBoard", Price=1500},
-            new Product {Id=4, Name="Monitor" , Price=10000} 
-        };
+        _context = context;
+    }
+
+    public async Task<List<Product>> GetProducts()
+    {
+        return await _context.Products.ToListAsync();
+    }
+
+    public async Task<Product> CreateProduct(Product product)
+    {
+        await _context.Products.AddAsync(product);
+        await _context.SaveChangesAsync();
+        return product;
     }
 }

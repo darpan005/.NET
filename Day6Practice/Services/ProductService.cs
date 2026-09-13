@@ -1,8 +1,9 @@
 using Day6.DTOs;
 using Day6.Repositories;
 using Day6.Service;
+using Day6.Models;
 
-namespace Day6.Repositories;
+namespace Day6.Service;
 
 public class ProductService : IProductService
 {
@@ -13,18 +14,32 @@ public class ProductService : IProductService
         _repository = repository;
     }
 
-    public List<ProductDTO> GetProducts()
+    public async Task<List<ProductDTO>> GetProducts()
     {
-        var allProducts = _repository.GetProducts();
+        var products = await _repository.GetProducts();
 
-        return allProducts
-                .Where(p => p.Price >= 1000)
-                .Select(p => new ProductDTO
-                {
-                    Name = p.Name,
-                    Price = p.Price
-                })
-                .ToList();
-    
+        return products.Where(p => p.Price >= 1000).Select(p => new ProductDTO
+        {
+            Name = p.Name,
+            Price = p.Price
+        }).ToList();
     }
+
+    public async Task<ProductDTO> CreateProduct(ProductDTO productdto)
+    {
+        var product = new Product
+        {
+            Name = productdto.Name,
+            Price = productdto.Price
+        };
+
+        var createProduct = await _repository.CreateProduct(product);
+
+        return new ProductDTO
+        {
+            Name = createProduct.Name,
+            Price = createProduct.Price
+        };
+    }
+
 }

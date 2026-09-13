@@ -4,5 +4,6 @@ namespace Day6.Repositories;
 
 public interface IProductRepository
 {
-    List<Product> GetProducts();
+    Task<List<Product>> GetProducts();
+    Task<Product> CreateProduct(Product product);
 }

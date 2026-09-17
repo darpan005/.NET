@@ -5,7 +5,7 @@ namespace JobTracker.Services
 {
     public interface IAuthService
     {
-        Task<string?> RegistrAsync(RegisterDto dto);
+        Task<string?> RegisterAsync(RegisterDto dto);
         Task<string> LoginAsync(LoginDto dto);
     }
 }

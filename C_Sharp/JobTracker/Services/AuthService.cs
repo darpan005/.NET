@@ -34,7 +34,7 @@ namespace JobTracker.Services
             var user = new User
             {
                 Email=dto.Email,
-                PasswordHash=dto.Password,
+                PasswordHash= passwordHash,
                 Role= dto.Role
             };
 

@@ -164,3 +164,6 @@ D:\Practice\.NET\C_Sharp\JobTracker\obj\Debug\net10.0\refint\JobTracker.dll
 D:\Practice\.NET\C_Sharp\JobTracker\obj\Debug\net10.0\JobTracker.pdb
 D:\Practice\.NET\C_Sharp\JobTracker\obj\Debug\net10.0\JobTracker.genruntimeconfig.cache
 D:\Practice\.NET\C_Sharp\JobTracker\obj\Debug\net10.0\ref\JobTracker.dll
+D:\Practice\.NET\C_Sharp\JobTracker\bin\Debug\net10.0\BCrypt-Net-Next.dll
+D:\Practice\.NET\C_Sharp\JobTracker\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Practice\.NET\C_Sharp\JobTracker\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
